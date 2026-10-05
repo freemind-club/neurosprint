@@ -5,8 +5,46 @@
 | Скилл | Версия | Для кого | Урок |
 |---|---|---|---|
 | [komanda-dispetcher](komanda-dispetcher/SKILL.md) | 2.1.0 | сотрудник Диспетчер: сортирует входящие сообщения клиентов | [урок 1](../nedelya-1-jev-laya/README.md) |
+| [otvety-na-otzyvy](otvety-na-otzyvy/SKILL.md) | 1.0.0 | твой основной Гермес (без сотрудника): черновик ответа на отзыв клиента | [урок 2](../nedelya-2-skilly/README.md) |
+| [skill-stroitel](skill-stroitel/SKILL.md) | 1.0.0 | твой основной Гермес: интервью → поиск готового скилла → установка/донастройка или сборка с нуля | [бонус к уроку 2](../nedelya-2-skilly/БОНУС_skill-stroitel.md) |
 
-## Как поставить скилл сообщением в Chat Гермеса
+## Скилл «Ответы на отзывы» — как его делают на уроке 2
+
+На уроке участники **не скачивают** этот файл — они просят Гермеса создать такой скилл обычной фразой в чате (см. [урок 2](../nedelya-2-skilly/README.md#живой-пример-ответы-на-отзывы-клиентов)), без терминала и путей. Файл в этой папке — эталон для сверки: на него ссылается бонус-блок урока «Для любопытных» и заметки ведущего, если результат у кого-то выйдет не похож на ожидания.
+
+Технический путь ниже (скачать и поставить готовый файл напрямую) — альтернатива для тех, кто уже освоился с терминалом, не основной путь урока.
+
+<details>
+<summary><b>Технический путь: поставить готовый файл напрямую (не основной путь урока)</b></summary>
+
+Этот скилл ставится самому Гермесу, не сотруднику — поэтому путь без `-p <профиль>`.
+
+**Сообщение в Chat:**
+
+```
+Поставь мне скилл «Ответы на отзывы». По шагам, после каждого коротко доложи.
+1. mkdir -p ~/.hermes/skills/neurosprint/otvety-na-otzyvy
+2. curl -fsSL https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/otvety-na-otzyvy/SKILL.md -o ~/.hermes/skills/neurosprint/otvety-na-otzyvy/SKILL.md
+3. Покажи строку version из файла.
+4. hermes skills list | grep otzyv — скилл должен быть в списке.
+5. Итог одной строкой: скачано / версия / виден в списке.
+```
+
+<details>
+<summary><b>Если Гермес не справился — команды для терминала Netcatty</b></summary>
+
+```
+mkdir -p ~/.hermes/skills/neurosprint/otvety-na-otzyvy
+curl -fsSL https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/otvety-na-otzyvy/SKILL.md -o ~/.hermes/skills/neurosprint/otvety-na-otzyvy/SKILL.md
+grep version ~/.hermes/skills/neurosprint/otvety-na-otzyvy/SKILL.md
+hermes skills list | grep otzyv
+```
+
+</details>
+
+</details>
+
+## Как поставить скилл сообщением в Chat Гермеса (сотруднику)
 
 Пример для Диспетчера. Сотрудник `dispetcher` уже должен быть создан ([урок 1, шаг 6](../nedelya-1-jev-laya/README.md#шаг-6-создаём-диспетчера)).
 
