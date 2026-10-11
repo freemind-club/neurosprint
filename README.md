@@ -14,7 +14,7 @@
 | 1 | [Гермес, Диспетчер, Jev и Laya](nedelya-1-jev-laya/README.md) | бот в Telegram и сотрудник, который сортирует входящие с уверенностью |
 | 1 | [Рецепты для моделей-решателей](nedelya-1-jev-laya/recepty.md) | как задавать вопросы Jev и Laya, 8 готовых рецептов |
 | 2 | [Скиллы](nedelya-2-skilly/README.md) | свой скилл Гермесу под рутину твоего бизнеса |
-| 3 | [Неделя 3](nedelya-3/README.md) | тема по голосованию |
+| 3 | [Контент-агент для Instagram](nedelya-3-reels/README.md) | сотрудник Рилсы: находит рилсы-выбросы, крадёт механику, пишет раскадровку под телефон |
 | 4 | [Неделя 4](nedelya-4/README.md) | тема по голосованию |
 | 5 | [Неделя 5](nedelya-5/README.md) | тема по голосованию |
 | 6 | [Неделя 6](nedelya-6/README.md) | тема по голосованию, демо-день |
@@ -40,6 +40,9 @@
 | Рецепты | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/nedelya-1-jev-laya/recepty.md` |
 | Скилл «Ответы на отзывы» | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/otvety-na-otzyvy/SKILL.md` |
 | Урок 2 | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/nedelya-2-skilly/README.md` |
+| Скилл сотрудника Рилсы | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/komanda-reels/SKILL.md` |
+| Метод Рилсов | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/neurosprint-reels/SKILL.md` |
+| Урок 3 | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/nedelya-3-reels/README.md` |
 
 Например, можно написать в Chat Гермеса: «Прочитай урок по ссылке … и объясни шаг 6 проще».
 
