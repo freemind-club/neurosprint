@@ -7,8 +7,8 @@
 | [komanda-dispetcher](komanda-dispetcher/SKILL.md) | 2.1.0 | сотрудник Диспетчер: сортирует входящие сообщения клиентов | [урок 1](../nedelya-1-jev-laya/README.md) |
 | [otvety-na-otzyvy](otvety-na-otzyvy/SKILL.md) | 1.0.0 | твой основной Гермес (без сотрудника): черновик ответа на отзыв клиента | [урок 2](../nedelya-2-skilly/README.md) |
 | [skill-stroitel](skill-stroitel/SKILL.md) | 1.0.0 | твой основной Гермес: интервью → поиск готового скилла → установка/донастройка или сборка с нуля | [бонус к уроку 2](../nedelya-2-skilly/БОНУС_skill-stroitel.md) |
-| [komanda-reels](komanda-reels/SKILL.md) | 1.0.0 | сотрудник Рилсы (`reels`): находит рилсы-выбросы, разбирает, переносит механику на твою нишу, пишет раскадровку под телефон | урок 3 |
-| [neurosprint-reels](neurosprint-reels/SKILL.md) | 1.0.0 | метод сотрудника Рилсы: 4 шага «найти → разобрать → украсть механику → раскадровка», документ `reels-razbor-ДАТА.md` | урок 3 |
+| [komanda-reels](komanda-reels/SKILL.md) | 1.0.1 | сотрудник Рилсы (`reels`): находит выбросы в коротких видео (Reels, Shorts, TikTok), разбирает, переносит механику на твою нишу, пишет раскадровку под телефон | урок 3 |
+| [neurosprint-reels](neurosprint-reels/SKILL.md) | 1.0.1 | метод сотрудника Рилсы для коротких видео (Reels, Shorts, TikTok): 4 шага «найти → разобрать → украсть механику → раскадровка», документ `reels-razbor-ДАТА.md` | урок 3 |
 
 ## Скилл «Ответы на отзывы» — как его делают на уроке 2
 
