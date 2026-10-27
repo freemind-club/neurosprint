@@ -10,6 +10,7 @@
 
 | Неделя | Урок | Что получится |
 |---|---|---|
+| 0 | [Гермес с нуля](nedelya-0-germes/README.md) | свой сервер → живой помощник в Telegram, бесплатно, без ключей |
 | 0 | [Старт](nedelya-0-start/README.md) | что подготовить и 20 живых сообщений клиентов |
 | 1 | [Гермес, Диспетчер, Jev и Laya](nedelya-1-jev-laya/README.md) | бот в Telegram и сотрудник, который сортирует входящие с уверенностью |
 | 1 | [Рецепты для моделей-решателей](nedelya-1-jev-laya/recepty.md) | как задавать вопросы Jev и Laya, 8 готовых рецептов |
@@ -35,6 +36,7 @@
 
 | Файл | Ссылка |
 |---|---|
+| Урок 0 «Гермес с нуля» | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/nedelya-0-germes/README.md` |
 | Скилл Диспетчера | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/komanda-dispetcher/SKILL.md` |
 | Урок 1 | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/nedelya-1-jev-laya/README.md` |
 | Рецепты | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/nedelya-1-jev-laya/recepty.md` |
