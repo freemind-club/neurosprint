@@ -1,21 +1,15 @@
-MIT License
+Нейроспринт — материалы уроков
+© 2026 Олег Лаврентьев
 
-Copyright (c) 2026 Олег Лаврентьев
+Тексты уроков, инструкции, описания и изображения в этом репозитории
+распространяются по лицензии Creative Commons
+«Attribution-NonCommercial-NoDerivatives 4.0 International» (CC BY-NC-ND 4.0).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Можно: читать, проходить уроки, делиться ссылкой и копией с указанием автора.
+Нельзя без письменного согласия автора: продавать, включать в платные курсы
+и клубы, публиковать изменённые или переработанные версии.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Полный текст лицензии: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.ru
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Исключение: скиллы в папке skills/ распространяются по лицензии MIT
+(см. skills/LICENSE) — их можно свободно ставить, менять и использовать.
