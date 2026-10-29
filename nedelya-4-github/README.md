@@ -274,7 +274,7 @@ grep -h "^version" ~/.hermes/profiles/arhivarius/skills/neurosprint/*/SKILL.md
 Добавь в реестр команды: arhivarius — Архивариус, скиллы komanda-arhivarius и neurosprint-4-github. Обнови komanda.md и память «Нейроспринт — команда». Покажи реестр.
 ```
 
-📸 скриншот: ответ сотрудника своим именем и реестр команды
+<!-- 📸 скриншот: ответ сотрудника своим именем и реестр команды -->
 
 <details>
 <summary><b>Необязательно: попробовать найм целиком словами</b></summary>

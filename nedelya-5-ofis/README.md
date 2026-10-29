@@ -180,7 +180,7 @@ hermes -p sekretar config set skills.auto_load '["komanda-sekretar", "neurosprin
 Добавь в реестр команды: sekretar — Секретарь, скиллы komanda-sekretar и neurosprint-5-ofis. Обнови komanda.md и память «Нейроспринт — команда». Покажи реестр.
 ```
 
-📸 скриншот: ответ Секретаря своим именем
+<!-- 📸 скриншот: ответ Секретаря своим именем -->
 
 <details>
 <summary><b>Для профи: восемь вещей, которые Секретарь не сделает, даже если попросить</b></summary>
