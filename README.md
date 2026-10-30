@@ -18,7 +18,7 @@
 | 3 | [Контент-агент для коротких видео](nedelya-3-reels/README.md) | сотрудник Рилсы: находит выбросы в Reels, Shorts и TikTok, крадёт механику, пишет раскадровку под телефон |
 | 4 | [GitHub с нуля](nedelya-4-github/README.md) | сотрудник Архивариус: сохранить своё, взять чужое, отдать своё, вернуть сломанное |
 | 5 | [ИИ-команда: офис без сотрудников](nedelya-5-ofis/README.md) | Секретарь и Аналитик: доска задач, расписание, разбор входящих, стоп-кран — и диагностика бизнеса, из которой берутся задачи офису |
-| 6 | [Неделя 6](nedelya-6/README.md) | тема по голосованию, демо-день |
+| 6 | [AI-команда и Директор в Гермесе](nedelya-6/README.md) | финал: мозг команды (цифры и смыслы), сотрудник Директор раздаёт задачи и не делает сам, утренняя сводка в Telegram, резервная копия всей системы, карта команды и демо-день |
 
 Скиллы (инструкции для сотрудников) — в папке [skills](skills/README.md).
 
@@ -52,6 +52,8 @@
 | Скилл сотрудника Секретарь | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/komanda-sekretar/SKILL.md` |
 | Метод офиса (Секретарь) | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/neurosprint-5-ofis/SKILL.md` |
 | Скилл сотрудника Аналитик | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/komanda-analitik/SKILL.md` |
+| Урок 6 | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/nedelya-6/README.md` |
+| Скилл сотрудника Директор | `https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/komanda-direktor/SKILL.md` |
 
 Например, можно написать в Chat Гермеса: «Прочитай урок по ссылке … и объясни шаг 6 проще».
 
