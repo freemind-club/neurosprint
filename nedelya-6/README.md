@@ -388,7 +388,7 @@ hermes mcp test mozg
 **Сообщение в Chat:**
 
 ```
-Создай мне нового сотрудника: профиль kadrovik копией себя, описание «Кадровик: проводит интервью с владельцем, создаёт профили новых сотрудников, прописывает им правила SOUL и добавляет в реестр команды; сам работу не делает».
+Создай мне нового сотрудника: профиль kadrovik копией себя, описание «Кадровик: проводит интервью с владельцем, создаёт профили новых сотрудников, прописывает им правила SOUL и добавляет в реестр команды; сам работу не делает». ВАЖНО: в отличие от Секретаря и Аналитика, Кадровику нужна память — подключения к мозгу (lightrag или mozg) и к базе (postgres) НЕ убирай и не выключай, остальные можно выключить.
 1. Включи ему автозагрузку скилла komanda-kadrovik.
 2. Итог по одной строке: профиль kadrovik создан / автозагрузка включена.
 ```
@@ -401,6 +401,21 @@ mkdir -p ~/.hermes/profiles/kadrovik/skills/neurosprint/komanda-kadrovik
 curl -fsSL https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/komanda-kadrovik/SKILL.md -o ~/.hermes/profiles/kadrovik/skills/neurosprint/komanda-kadrovik/SKILL.md
 hermes -p kadrovik config set skills.auto_load '["komanda-kadrovik"]'
 ```
+
+**Проверь подключения Кадровика** (в терминале):
+
+```bash
+hermes -p kadrovik mcp list
+```
+
+Мозг (`lightrag` или `mozg`) и `postgres` должны быть **enabled**. Проверено на записи: Гермес нанимает «тем же рецептом», что Секретаря в неделе 5 (там подключения убирают), и выключает мозг и Кадровику — тогда он не находит твой голос и требует полное интервью. Выключено — включи:
+
+```bash
+hermes -p kadrovik config set mcp_servers.lightrag.enabled true
+hermes -p kadrovik config set mcp_servers.postgres.enabled true
+```
+
+(у кого мозг из модуля `mozg` — вместо `lightrag` пиши `mozg`). Потом в Chat Кадровика — `/new` и команда заново.
 
 ### 7в. Как Кадровик нанимает сотрудника
 
