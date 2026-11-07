@@ -327,7 +327,7 @@ grep -m1 '^version' ~/.hermes/skills/neurosprint/komanda-direktor/SKILL.md
 hermes config set skills.auto_load '["caveman", "komanda-direktor"]'
 ```
 
-> ⚠️ `config set` **заменяет** весь список. Если ставил модуль `office` с caveman — в списке должны остаться оба: `caveman` и `komanda-direktor`. Проверь: `hermes config get skills.auto_load` <!-- проверить -->.
+> ⚠️ `config set` **заменяет** весь список. Если ставил модуль `office` с caveman — в списке должны остаться оба: `caveman` и `komanda-direktor`. Проверь: `hermes config get skills.auto_load` — должно быть `caveman` и `komanda-direktor`.
 
 ### 6б. Включаем инструменты управления
 
@@ -873,7 +873,8 @@ hermes -p kadrovik config set mcp_servers.postgres.enabled true
 | «Запомни» прошло, а «вспомни» после `/new` — «не нашёл» | Смысловая память ещё разбирает текст. Подожди минуту-две и спроси снова. Не помогло — посмотри журнал мозга: `cd ~/lightrag && docker compose logs --tail 80 lightrag | grep -iE 'error|429|401'`. `429` — упёрся в лимит бесплатного Mistral (около запроса в секунду), подожди. `401` — ключ не принят: у Mistral не подтверждён телефон или ключ не активирован |
 | Директор отвечает как обычный Гермес | Скилл не подхватился в основном профиле. Разложи скилл блоком из [5б](#6а-ставим-скилл-директора), проверь `hermes config set skills.auto_load`, `/new` |
 | Директор начал делать работу сам | Скажи: «Это работа Аналитика (Секретаря, …) — поставь карточку, сам не делай». Повторяется — проверь модель: слабая модель хуже держит роль |
-| Директор делает всё сам, не создаёт карточки | У главного профиля нет toolset kanban. Включи: `hermes config set toolsets '["common", "kanban"]' <!-- проверить -->` и `hermes gateway restart` |
+| Директор делает всё сам, не создаёт карточки | У главного профиля нет toolset kanban. Включи: `hermes config get toolsets          # должно быть: hermes-cli и kanban
+hermes config set toolsets '["hermes-cli", "kanban"]'   # только если kanban нет; модуль office делает это сам` и `hermes gateway restart` |
 | Карточка Директора висит, статус не меняется | Почти всегда имя сотрудника с опечаткой. «Покажи список штата и проверь, взяли ли карточку в работу». И первым делом — жив ли офис: `hermes cron status`, строка `Gateway is running` |
 | в офисе дубли папок латиницей | Не удаляй! Переложи файлы в папки на кириллице и оставь русские названия, латиницу можно убрать потом |
 | не могу расшифровать копию | Для расшифровки нужен тот же ключ age, который использовался при создании. Без файла ключа копия не восстановится |
@@ -962,7 +963,8 @@ hermes mcp list
 mkdir -p ~/.hermes/skills/neurosprint/komanda-direktor
 curl -fsSL https://raw.githubusercontent.com/freemind-club/neurosprint/main/skills/komanda-direktor/SKILL.md -o ~/.hermes/skills/neurosprint/komanda-direktor/SKILL.md
 hermes config set skills.auto_load '["komanda-direktor"]'
-hermes config set toolsets '["common", "kanban"]' <!-- проверить -->
+hermes config get toolsets          # должно быть: hermes-cli и kanban
+hermes config set toolsets '["hermes-cli", "kanban"]'   # только если kanban нет; модуль office делает это сам
 hermes gateway restart
 
 # Кадровик
