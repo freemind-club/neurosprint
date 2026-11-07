@@ -723,7 +723,7 @@ http://localhost:9119
 Меняем сразу. В Netcatty вставь блок целиком — он спросит новый пароль (символы не появятся, это нормально) и сам перезапустит интерфейс:
 
 ```
-read -rsp "Новый пароль дашборда: " P; echo; H=$(cd /usr/local/lib/hermes-agent && ./venv/bin/python -c "import sys; from plugins.dashboard_auth.basic import hash_password; print(hash_password(sys.stdin.readline().rstrip()))" <<< "$P"); unset P; if [ -n "$H" ]; then sed -i "s|^HERMES_DASHBOARD_BASIC_AUTH_PASSWORD_HASH=.*|HERMES_DASHBOARD_BASIC_AUTH_PASSWORD_HASH=$H|" ~/.hermes/.env; pkill -f "hermes dashboard"; sleep 2; setsid nohup hermes dashboard --host 0.0.0.0 --port 9119 --no-open > ~/.hermes/dashboard.log 2>&1 < /dev/null & disown; echo "Готово, войди с новым паролем"; else echo "Не вышло, пароль не изменён"; fi
+read -rsp "Новый пароль дашборда: " P; echo; if [ -n "$P" ]; then sed -i '/^HERMES_DASHBOARD_BASIC_AUTH_PASSWORD/d' ~/.hermes/.env; echo "HERMES_DASHBOARD_BASIC_AUTH_PASSWORD=$P" >> ~/.hermes/.env; unset P; pkill -f "hermes dashboard"; sleep 2; setsid nohup hermes dashboard --host 0.0.0.0 --port 9119 --no-open > ~/.hermes/dashboard.log 2>&1 < /dev/null & disown; echo "Готово, войди с новым паролем"; else echo "Пусто — пароль не изменён"; fi
 ```
 
 Новый пароль — те же правила: **латиница и цифры, без апострофов и кавычек**.
@@ -818,6 +818,8 @@ ufw status
 | `This model is no longer free` / ошибка `404` | Твою бесплатную модель сделали платной. Резерв из [шага 7а](#шаг-7а-запасной-мозг-если-бесплатную-модель-уберут) подхватит сам. Резерва нет — `hermes model` и выбери другую бесплатную |
 | `hermes model` пишет `requires an interactive terminal` | Команда запущена не из окна Netcatty. Зайди в Netcatty и повтори |
 | Веб-интерфейс не открывается по домену | Запись A ещё не разошлась или указывает не туда. Проверь запись, подожди 30 минут. Пока — туннель (вариант Б) или Telegram |
+| Веб-интерфейс по домену открывается без пароля | В настройках Гермеса не указан домен. `hermes config set dashboard.public_url https://твой-домен`, потом перезапусти интерфейс (`pkill -f "hermes dashboard"` и команда запуска из блока смены пароля). Проверка: `curl -s http://127.0.0.1:9119/api/status` → `"auth_required":true` |
+| Страница входа открылась, а после входа интерфейс висит или грузится минутами | Из России режут скорость до зарубежных серверов, а интерфейс весит 1–2 МБ. Включи сжатие (одна команда, ничего не ломает): `printf 'gzip_vary on;\ngzip_proxied any;\ngzip_comp_level 6;\ngzip_types text/plain text/css application/json application/javascript text/javascript image/svg+xml;\n' > /etc/nginx/conf.d/fm-gzip.conf && nginx -t && systemctl reload nginx`. Файлы станут в 3 раза меньше |
 | Без домена `http://localhost:9119` не открывается, в окне туннеля `Connection refused` | Веб-интерфейс на сервере не запущен — установщик без домена его не стартует. Шаг 1 [варианта Б](#вариант-б-без-домена-туннель-если-с-доменом-возиться-не-хочешь), подожди 20 секунд, обнови страницу |
 | `hermes gateway status` печатает «service definition is outdated» | Это не поломка, а напоминание. `hermes gateway restart` |
 | `systemctl status hermes-gateway` показывает `activating (auto-restart)`, перезапуски идут по кругу (сотни) | Стоят **две** службы автозапуска: одну поставил мастер Гермеса (ты ответил `y` на «Install the gateway service…»), вторую — наш установщик. Вторая видит, что помощник уже работает, выходит — и перезапускается снова. Помощник при этом **работает**, это просто мусор в логах. Лечение одной командой: `systemctl disable --now hermes-gateway` — останется служба мастера. В свежей версии установщика это уже исправлено |
@@ -955,7 +957,7 @@ ufw status
 
 | Что | Размер |
 |---|---|
-| `/usr/local/lib/hermes-agent` | ~2,5 ГБ (venv 870 МБ, node_modules 400 МБ, `.git` 857 МБ) |
+| `/usr/local/lib/hermes-agent` (с v0.23 — `~/.hermes/hermes-agent` + `~/.hermes/installs`) | ~2,5 ГБ (venv 870 МБ, node_modules 400 МБ, `.git` 857 МБ) |
 | `~/.hermes/tools` | ~2,2 ГБ (свой Python, Node, chromium, ffmpeg) |
 | кеш `~/.hermes/cache/uv` | ~1 ГБ, можно чистить потом |
 | **Итого свободного места** | **минимум 10 ГБ** |

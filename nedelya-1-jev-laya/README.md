@@ -124,7 +124,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/freemind-club/freemind-setup
 - **Учебный пароль смени сразу.** Если при установке нажал Enter, в Netcatty выполни (попросит новый пароль, символы не появятся):
 
 ```
-read -rsp "Новый пароль дашборда: " P; echo; H=$(cd /usr/local/lib/hermes-agent && ./venv/bin/python -c "import sys; from plugins.dashboard_auth.basic import hash_password; print(hash_password(sys.stdin.readline().rstrip()))" <<< "$P"); unset P; if [ -n "$H" ]; then sed -i "s|^HERMES_DASHBOARD_BASIC_AUTH_PASSWORD_HASH=.*|HERMES_DASHBOARD_BASIC_AUTH_PASSWORD_HASH=$H|" ~/.hermes/.env; pkill -f "hermes dashboard"; sleep 2; setsid nohup hermes dashboard --host 0.0.0.0 --port 9119 --no-open > ~/.hermes/dashboard.log 2>&1 < /dev/null & disown; echo "Готово, войди с новым паролем"; else echo "Не вышло, пароль не изменён"; fi
+read -rsp "Новый пароль дашборда: " P; echo; if [ -n "$P" ]; then sed -i '/^HERMES_DASHBOARD_BASIC_AUTH_PASSWORD/d' ~/.hermes/.env; echo "HERMES_DASHBOARD_BASIC_AUTH_PASSWORD=$P" >> ~/.hermes/.env; unset P; pkill -f "hermes dashboard"; sleep 2; setsid nohup hermes dashboard --host 0.0.0.0 --port 9119 --no-open > ~/.hermes/dashboard.log 2>&1 < /dev/null & disown; echo "Готово, войди с новым паролем"; else echo "Пусто — пароль не изменён"; fi
 ```
 
 Что где лежит:
